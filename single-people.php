@@ -31,7 +31,7 @@
 						<?php the_post_thumbnail('full'); ?>
 					<?php } ?>			    
 					<h4><?php the_title() ?></h4>
-			    <h6><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h6>
+			    <h5><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h5>
 			
 			    <p class="listing">
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
@@ -64,8 +64,14 @@
 			    		<a href="<?php echo get_post_meta($post->ID, 'ecpt_website', true); ?>" target="_blank"><span class="icon-globe"></span>Personal Website</a><br>
 			    	<?php endif; ?>
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_lab_website', true) ) : ?>
-			    		<a href="<?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>" target="_blank"><span class="icon-globe"></span>Group/Lab Website</a>
+			    		<a href="<?php echo get_post_meta($post->ID, 'ecpt_lab_website', true); ?>" target="_blank"><span class="icon-globe"></span>Group/Lab Website</a><br>
 			    	<?php endif; ?>
+			    	<?php if (get_post_meta($post->ID, 'ecpt_google_id', true) ) : ?>
+			    		<a href="http://scholar.google.com/citations?user=<?php echo get_post_meta($post->ID, 'ecpt_google_id', true); ?>" target="_blank"><i class="fa fa-google"></i> Google Scholar Profile</a><br>
+			    	<?php endif; ?>
+			    	<?php if (get_post_meta($post->ID, 'ecpt_orcid_id', true) ) : ?>
+			    		<a href="http://orcid.org/<?php echo get_post_meta($post->ID, 'ecpt_orcid_id', true); ?>" target="_blank"><i class="fa fa-user"></i> ORCID Profile</a>
+					<?php endif; ?>
 			    </p>
 			</div>
 			<div class="small-12 medium-8 columns">
