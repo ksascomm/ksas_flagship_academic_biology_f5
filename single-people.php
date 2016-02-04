@@ -26,12 +26,12 @@
 				</div>
 			</div>
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-			<div class="small-12 medium-4 columns">
+			<div class="small-12 medium-4 columns bio">
 				<?php if ( has_post_thumbnail()) { ?> 
 						<?php the_post_thumbnail('full'); ?>
 					<?php } ?>			    
-					<h4><?php the_title() ?></h4>
-			    <h5><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h5>
+					<h1><?php the_title() ?></h1>
+			    <h2><?php echo get_post_meta($post->ID, 'ecpt_position', true); ?></h2>
 			
 			    <p class="listing">
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_office', true) ) : ?>
@@ -51,10 +51,9 @@
 			    	<?php endif; ?>
 			    
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_email', true) ) : $email = get_post_meta($post->ID, 'ecpt_email', true); ?>
-											<span class="icon-mail"></span><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;<?php echo email_munge($email); ?>">
-											
-											<?php echo email_munge($email); ?> </a><br>
-										<?php endif; ?>
+						<span class="icon-mail"></span><a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;<?php echo email_munge($email); ?>">
+							<?php echo email_munge($email); ?> </a><br>
+					<?php endif; ?>
 			    	
 			    	<?php if ( get_post_meta($post->ID, 'ecpt_cv', true) ) : ?>
 			    		<a href="<?php echo get_post_meta($post->ID, 'ecpt_cv', true); ?>"><span class="icon-file-pdf"></span>Curriculum Vitae</a><br>

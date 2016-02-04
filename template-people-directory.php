@@ -31,7 +31,7 @@ Template Name: People Directory
 	<section class="row">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<div class="large-12 columns">
-				<h2><?php the_title();?></h2>
+				<h1 class="page-title"><?php the_title();?></h1>
 				<p><?php the_content();?></p>
 			</div>
 		<?php endwhile; endif; ?>
@@ -72,12 +72,6 @@ Template Name: People Directory
 			<?php } ?>
 		</ul>
 	</section>
-
-	<div class="row">
-		<div class="large-12 columns">
-			<?php if ( have_posts() ) : while ( have_posts() ) : the_post();  the_content(); endwhile; endif; ?>
-		</div>
-	</div>	
 
 </div> <!-- End content wrapper -->
 <?php get_footer(); ?>
