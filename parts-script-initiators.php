@@ -3,8 +3,8 @@ Non-Foundation js
 -->
 <!***********ALL PAGES**************>  
 <script src="<?php echo get_template_directory_uri() ?>/assets/js/foundation.min.js"></script> 
-<script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/app-min.js"></script> 
-<script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/offcanvas.js"></script> 
+<script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/app.js"></script> 
+<script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/offcanvas.js"></script>
 
 <!**********TABLET/MOBILE MENUS**************>  
 <?php if(is_tablet()) {  ?>
@@ -13,7 +13,6 @@ Non-Foundation js
 			    jQuery('#main_nav').meanmenu({meanScreenWidth: "767"});
 			});
 		</script>
-		<style>#search-bar {margin-top:50px;}</style>
 <?php } else { ?>
 	<script>
 		jQuery(document).ready(function () {
