@@ -18,7 +18,7 @@
 			<span class="icon-mail"> <a href="mailto:<?php echo get_post_meta($post->ID, 'ecpt_email', true); ?>"><?php echo get_post_meta($post->ID, 'ecpt_email', true); ?> </a></span>
 		<?php endif; ?>
 		<?php if ( get_post_meta($post->ID, 'ecpt_phone', true) ) : ?>
-			<span><i class="fa fa-phone-square"></i>&nbsp;<?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?></span>
+			<span class="fa fa-phone-square"></span> <?php echo get_post_meta($post->ID, 'ecpt_phone', true); ?>
 		<?php endif; ?>
 		<?php if ( get_post_meta($post->ID, 'ecpt_fax', true) ) : ?>
 			<span class="icon-printer"><?php echo get_post_meta($post->ID, 'ecpt_fax', true); ?></span>

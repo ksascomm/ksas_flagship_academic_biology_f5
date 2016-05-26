@@ -37,6 +37,11 @@ h6 {
  	font-size: 2.125rem;
  }
 
+ span.fa.fa-phone-square {
+ 	margin-right: 0px;
+ 	color: #005eb8;
+ }
+
 .textwidget {margin: 0;}
 .textwidget a {border-bottom: .125em dotted;border-bottom-color: rgba(0,0,0,.2);}
 .textwidget a:hover {color: #2C2C33 !important; border-bottom-style: solid;}
