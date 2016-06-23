@@ -183,11 +183,11 @@ li.person img {
 }
 
 #fields_search input[type="text"] {
-	height: 30px;
+	height: 42px;
 }
 
 #fields_search input[type="submit"] {
-	height: 30px;
+	height: 42x;
 	font-size: 1rem;
 }
 
