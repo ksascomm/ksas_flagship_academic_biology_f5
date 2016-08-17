@@ -14,7 +14,7 @@
 							<?php endwhile; endif; ?>
 							<?php $jump_menu_query = new WP_Query(array(
 								'post-type' => 'people',
-								'role' => 'faculty',
+								'role' => 'tenured-and-tenure-track-faculty',
 								'meta_key' => 'ecpt_people_alpha',
 								'orderby' => 'meta_value',
 								'order' => 'ASC',

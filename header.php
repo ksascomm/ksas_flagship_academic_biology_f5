@@ -3,6 +3,7 @@
 <head>
   	<meta charset="utf-8" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="date" content="<?php the_modified_date(); ?>" />
 	<title><?php wp_title('|', true, 'right'); ?><?php bloginfo('name'); ?></title>
 	<link rel="shortcut icon" href="<?php echo get_template_directory_uri() ?>/assets/images/favicon.ico" />
 	<link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_template_directory_uri() ?>/assets/images/apple-touch-icon-144x144-precomposed.png" />
@@ -25,12 +26,9 @@
 	<!-- CSS Files: Conditionals -->
 	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/style.css">  
   
-  <!-- Modernizr and Jquery Script -->
-   <script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/modernizr.min.js"></script>
-  <?php wp_enqueue_script('jquery'); ?> 
   <?php wp_head(); ?>
 
-  <?php include_once("parts-analytics.php"); ?>
+  <?php include_once("analytics.php"); ?>
 </head>
 <?php $theme_option = flagship_sub_get_global_options(); $color_scheme = $theme_option['flagship_sub_color_scheme']; global $blog_id; $site_id = 'site-' . $blog_id; ?>
 <body <?php body_class($color_scheme . ' ' . $site_id); ?> onLoad="viewport()">
@@ -44,13 +42,13 @@
 				</div>
 			</div>
 			<div class="row hide-for-print">
-				<?php get_template_part( 'parts', 'search-mobile' ); ?>
+				<?php get_template_part( '/parts/search-mobile' ); ?>
 			</div>
 		</div>
 		
 	   <div id="desktop-nav">
 			
-			<?php get_template_part( 'parts', 'offcanvas' ); ?>
+			<?php get_template_part( '/parts/offcanvas' ); ?>
 			
 			<div class="row" id="department">
 				<div class="medium-12 columns" id="logo_nav">

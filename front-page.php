@@ -34,15 +34,10 @@ Template Name: Home - Background Photo
 <!-- Set photo background -->
 	<div class="row hide-for-small-only" id="photo">
 		<div class="small-12 columns radius10">
-			<?php $blog_id = get_current_blog_id(); ?>
-			<?php if ($blog_id == 57) { //get bio images ?>
- 				<script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/bs-slider-bio.js"></script>
-			<?php } else { //get cmdb images ?>
-    			<script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/bs-slider-cmdb.js"></script>
-			<?php } ?>
-			
 		</div>
 	</div>
+
+	
 	<?php the_content(); ?>
 
 
@@ -66,21 +61,22 @@ Template Name: Home - Background Photo
 	                <div class="small-12 large-4 columns post-container">
 	                    <div class="row">
 	                        <div class="small-11 small-centered columns post">
-        	                    <a href="<?php the_permalink();?>" title="<?php the_title(); ?>">
-            	                    <?php if(has_post_thumbnail()) { ?>
-            	                        <div class="row">
-            	                            <div class="small-12 columns">
-            	                                <?php the_post_thumbnail('rss', array('align'=>'center')); ?>
-            	                            </div>
-            	                        </div>
-                                    <?php } ?>
-                                    <div class="row">
-                                        <div class="small-12 columns">
-                                            <h5><?php the_title(); ?></h5>
-                                            <?php the_excerpt(); ?>
-                                        </div>
+        	                    <?php if(has_post_thumbnail()) { ?>
+        	                        <div class="row">
+        	                            <div class="small-12 columns">
+        	                                <?php the_post_thumbnail('rss', array('align'=>'center')); ?>
+        	                            </div>
+        	                        </div>
+                                <?php } ?>
+                                <div class="row">
+                                    <div class="small-12 columns">
+                                        <h5>
+                                        	<a href="<?php the_permalink();?>" title="<?php the_title(); ?>">	<?php the_title(); ?>
+                                        	</a>
+                                        </h5>
+                                        <?php the_excerpt(); ?>
                                     </div>
-        	                    </a>
+                                </div>
 	                        </div>
 	                    </div>
 	                </div>

@@ -37,7 +37,7 @@ Template Name: People Directory (Alphabetically)
 		<?php endwhile; endif; ?>
 		<div class="large-12 columns">
 			<?php $theme_option = flagship_sub_get_global_options();
-				if ( $theme_option['flagship_sub_directory_search']  == '1' ) { get_template_part('parts', 'directory-search'); } ?>
+				if ( $theme_option['flagship_sub_directory_search']  == '1' ) { get_template_part('/parts/directory-search'); } ?>
 		</div>
 	</section>
 
@@ -55,7 +55,7 @@ Template Name: People Directory (Alphabetically)
 				set_transient( 'people_query_alpha_' . $role_slug, $people_query, 2592000 );
 			} 				        	
 				if ($people_query->have_posts() ) : while ($people_query->have_posts()) : $people_query->the_post(); ?>
-					<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) { get_template_part('parts','hasbio-loop'); } else { get_template_part('parts', 'nobio-loop'); } ?>
+					<?php if ( get_post_meta($post->ID, 'ecpt_bio', true) ) { get_template_part('/parts/hasbio-loop'); } else { get_template_part('/parts/nobio-loop'); } ?>
 				<?php endwhile; endif; wp_reset_postdata(); ?>
 				<!-- Page Content -->
 			<?php if ( $theme_option['flagship_sub_directory_search']  == '1' ) { ?>
