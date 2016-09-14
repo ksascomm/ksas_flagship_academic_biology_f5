@@ -23,7 +23,7 @@
 
 <!***********DIRECTORY**************>
 <?php $theme_option = flagship_sub_get_global_options();
-if ( is_page_template( 'template-people-directory.php' ) && $theme_option['flagship_sub_directory_search']  == '1' )  { ?>
+if ( is_page_template( 'template-people-directory.php' || 'template-people-directory-alpha.php' ) && $theme_option['flagship_sub_directory_search']  == '1' )  { ?>
   	<script defer src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/page.directory.min.js"></script>
   	<script defer>
 	    var $j = jQuery.noConflict();
