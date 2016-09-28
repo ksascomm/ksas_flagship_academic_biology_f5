@@ -27,8 +27,8 @@ Template Name: People Directory (Alphabetically)
 	}
 	$filter_classes = implode(' ', $filter_slugs);
 	?>
-<div class="row wrapper radius10">
-	<section class="row">
+<div class="row wrapper radius10" role="main">
+	<div class="row">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<div class="large-12 columns">
 				<h1 class="page-title"><?php the_title();?></h1>
@@ -39,11 +39,11 @@ Template Name: People Directory (Alphabetically)
 			<?php $theme_option = flagship_sub_get_global_options();
 				if ( $theme_option['flagship_sub_directory_search']  == '1' ) { get_template_part('/parts/directory-search'); } ?>
 		</div>
-	</section>
+	</div>
 
 
 
-	<section class="row" id="fields_container">
+	<div class="row" id="fields_container">
 		<ul class="large-12 columns" id="directory">
 		<?php if ( false === ( $people_query = get_transient( 'people_query_alpha_' . $role_slug ) )) {				
 				$people_query = new WP_Query(array(
@@ -65,7 +65,7 @@ Template Name: People Directory (Alphabetically)
 			</div>
 			<?php } ?>
 		</ul>
-	</section>	
+	</div>	
 
 </div> <!-- End content wrapper -->
 <?php get_footer(); ?>

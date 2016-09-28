@@ -2,7 +2,7 @@
 <div class="row wrapper radius10" id="page" role="main">
 	<div class="small-12 columns radius-left offset-topgutter">	
 		
-		<section class="content">
+		<div class="content">
 			<div class="row">
 				<div class="small-5 small-offset-7 columns">
 					<label for="jump">
@@ -130,7 +130,7 @@
 			</div>
 			</div>
 			<?php endwhile; endif; ?>	
-		</section>
+		</div>
 	</div>	<!-- End main content (left) section -->
 </div> <!-- End #page -->
 <?php get_footer(); ?>
