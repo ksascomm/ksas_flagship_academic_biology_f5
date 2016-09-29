@@ -83,9 +83,9 @@ if ( is_page_template( 'template-courses-undergrad.php' ) || is_page_template( '
 	<script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/jquery.backstretch.min.js"></script>
 	 <?php $blog_id = get_current_blog_id(); ?>
 		<?php if ($blog_id == 57) { //get bio images ?>
-				<script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/bs-slider-bio.js"></script>
+				<script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/bs-slider-bio.min.js"></script>
 		<?php } else { //get cmdb images ?>
-			<script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/bs-slider-cmdb.js"></script>
+			<script src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/bs-slider-cmdb.min.js"></script>
 		<?php } ?>
  <?php } ?>
 
