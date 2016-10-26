@@ -28,6 +28,7 @@ Template Name: People Directory (Alphabetically)
 	$filter_classes = implode(' ', $filter_slugs);
 	?>
 <div class="row wrapper radius10" role="main">
+	<?php locate_template('parts/nav-breadcrumbs.php', true, false); ?>	
 	<div class="row">
 		<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 			<div class="large-12 columns">
