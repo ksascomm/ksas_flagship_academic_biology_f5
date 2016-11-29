@@ -13,26 +13,27 @@
 
 	<!-- CSS Files: All pages -->
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri() ?>/assets/stylesheets/app.min.css">
-	<!-- IE Fix for HTML5 Tags -->
-	<!--[if lt IE 10]>
-	    <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	    <script src="http://ie7-js.googlecode.com/svn/version/2.1(beta4)/IE9.js"></script>
-		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
-		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/assets/stylesheets/app.ie.css">
+	<!-- Make IE a modern browser -->
+	<!--[if IE]>
+		<script src="https://cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/css3-mediaqueries/0.1/css3-mediaqueries.min.js"></script>
+	<![endif]-->
+  	<!--[if lt IE 11]>
+		<link rel="stylesheet" type="text/css" href="<?php echo get_template_directory_uri() ?>/assets/css/app.ie.css">
 		<div data-alert class="alert-box alert">
-        <?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.'); ?>	
-        </div>	
+		<?php _e('You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.'); ?>	
+		</div>		
 	<![endif]-->
 	<!-- CSS Files: Conditionals -->
-	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/style.min.css">  
+	<link rel="stylesheet" href="<?php echo get_stylesheet_directory_uri() ?>/style.css">  
   
   <?php wp_head(); ?>
 
   <?php include_once("analytics.php"); ?>
 </head>
 <?php $theme_option = flagship_sub_get_global_options(); $color_scheme = $theme_option['flagship_sub_color_scheme']; global $blog_id; $site_id = 'site-' . $blog_id; ?>
-<body <?php body_class($color_scheme . ' ' . $site_id); ?> onLoad="viewport()">
-	<header>
+<body <?php body_class($color_scheme . ' ' . $site_id); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+	<header itemscope="itemscope" itemtype="http://schema.org/WPHeader" role="banner">
 	   <div id="mobile-nav">
 			<div class="row">
 				<div class="small-12 large-4 columns centered">
@@ -56,11 +57,18 @@
 						<li class="logo"><a href="<?php echo network_home_url(); ?>" title="Krieger School of Arts & Sciences"><img src="<?php echo get_template_directory_uri() ?>/assets/images/ksas-logo.png" alt="jhu logo"></a></li>
 					</div>
 					<div class="medium-9 columns">
-						<h1><a class="white" href="<?php echo site_url(); ?>"><span class="small"><?php echo get_bloginfo ( 'description' ); ?></span><?php echo get_bloginfo( 'title' ); ?></a></h1>
+						<h1 itemprop="headline">
+							<a class="white" href="<?php echo site_url(); ?>">
+								<?php if( !empty( get_bloginfo('description') )) : ?>
+										<span class="small" itemprop="description"><?php echo get_bloginfo ( 'description' ); ?></span>
+								<?php endif; ?>
+								<?php echo get_bloginfo( 'title' ); ?>
+							</a>
+						</h1>
 					</div>			
 				</div>
 			</div>
-			<div class="row hide-for-print">
+			<nav class="row hide-for-print" aria-label="Main Menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
 				<?php wp_nav_menu( array( 
 					'theme_location' => 'main_nav', 
 					'menu_class' => 'nav-bar', 
@@ -71,6 +79,6 @@
 					'walker' => new foundation_navigation(),
 					'items_wrap' => '<ul id="%1$s" class="%2$s" role="navigation" aria-label="Main menu">%3$s</ul>',
 					'depth' => 2  )); ?> 
-			</div>
+			</nav>
 		</div>
 	</header>

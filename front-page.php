@@ -42,7 +42,7 @@ Template Name: Home - Background Photo
 
 
 <!-- Begin main content area -->
-<div class="row wrapper radius10" id="page" role="main">
+<div class="row wrapper radius10" id="page" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 	<div class="small-12 columns">
 
 	    <?php if ( $news_query->have_posts() ) : ?>
@@ -54,32 +54,33 @@ Template Name: Home - Background Photo
 	    		</div>
 	    	</div>
 	        <div class="row">
-	        <div class="small-12 columns">
-	        <h4><?php echo $theme_option['flagship_sub_feed_name']; ?></h4>
-	        </div>
+		        <div class="small-12 columns">
+		        	<h4><?php echo $theme_option['flagship_sub_feed_name']; ?></h4>
+		        </div>
 	           <?php while ($news_query->have_posts()) : $news_query->the_post(); ?>
+	            <article class="news-item <?php if(is_sticky()) :?>sticky<?php endif;?>" aria-labelledby="post-<?php the_ID(); ?>" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">   	 
 	                <div class="small-12 large-4 columns post-container">
 	                    <div class="row">
 	                        <div class="small-11 small-centered columns post">
-        	                    <?php if(has_post_thumbnail()) { ?>
-        	                        <div class="row">
-        	                            <div class="small-12 columns">
-        	                                <?php the_post_thumbnail('rss'); ?>
-        	                            </div>
-        	                        </div>
-                                <?php } ?>
+        	                    <?php if(has_post_thumbnail()) : ?>
+        	                      <?php the_post_thumbnail('rss', array('itemprop' => 'image')); ?>
+        	                    <?php endif; ?>
                                 <div class="row">
                                     <div class="small-12 columns">
-                                        <h5>
-                                        	<a href="<?php the_permalink();?>" title="<?php the_title(); ?>">	<?php the_title(); ?>
+                                        <h1 itemprop="headline">
+                                        	<a href="<?php the_permalink();?>" title="<?php the_title(); ?>">
+                                        		<?php the_title(); ?>
                                         	</a>
-                                        </h5>
-                                        <?php the_excerpt(); ?>
+                                        </h1>
+                                        <div class="entry-content" itemprop="text">	
+                                        	<?php the_excerpt(); ?>
+                                        </div>
                                     </div>
                                 </div>
 	                        </div>
 	                    </div>
 	                </div>
+	             </article>
 	           <?php endwhile; ?>
 	        </div>
 	        <?php
@@ -92,6 +93,5 @@ Template Name: Home - Background Photo
 			<?php } ?>
 		<?php endif; ?>
 	</div>
-	<?php locate_template('parts-sidebar.php', true, false); ?>	
 </div>
 <?php get_footer(); ?>

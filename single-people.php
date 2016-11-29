@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-<div class="row wrapper radius10" id="page" role="main">
+<div class="row wrapper radius10" id="page" role="main" itemprop="mainContentOfPage" itemscope="itemscope" itemtype="http://schema.org/Blog">
 	<div class="small-12 columns radius-left offset-topgutter">	
 		
 		<div class="content">
