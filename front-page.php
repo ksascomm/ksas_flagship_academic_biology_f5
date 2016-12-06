@@ -68,9 +68,7 @@ Template Name: Home - Background Photo
                                 <div class="row">
                                     <div class="small-12 columns">
                                         <h1 itemprop="headline">
-                                        	<a href="<?php the_permalink();?>" title="<?php the_title(); ?>">
-                                        		<?php the_title(); ?>
-                                        	</a>
+											<a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>"><?php the_title();?></a>
                                         </h1>
                                         <div class="entry-content" itemprop="text">	
                                         	<?php the_excerpt(); ?>
