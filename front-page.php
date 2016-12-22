@@ -32,7 +32,7 @@ Template Name: Home - Background Photo
 ?>
 
 <!-- Set photo background -->
-	<div class="row hide-for-small-only" id="photo">
+	<div class="row hide-for-small-only" id="photo" role="marquee">
 		<div class="small-12 columns radius10">
 		</div>
 	</div>
