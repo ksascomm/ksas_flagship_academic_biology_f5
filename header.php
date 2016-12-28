@@ -68,16 +68,13 @@
 					</div>			
 				</div>
 			</div>
-			<nav class="row hide-for-print" aria-label="Main Menu" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement" role="navigation">
+			<nav class="row hide-for-print" aria-label="Main Menu" id="main_nav" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
 				<?php wp_nav_menu( array( 
 					'theme_location' => 'main_nav', 
 					'menu_class' => 'nav-bar', 
-					'container' => 'nav',
-					'container_id' => 'main_nav', 
-					'container_class' => 'small-12 columns',
+					'container' => 'false',
 					'fallback_cb' => 'foundation_page_menu',
 					'walker' => new foundation_navigation(),
-					'items_wrap' => '<ul id="%1$s" class="%2$s" role="navigation" aria-label="Main menu">%3$s</ul>',
 					'depth' => 2  )); ?> 
 			</nav>
 		</div>
