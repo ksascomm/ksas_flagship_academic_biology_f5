@@ -31,7 +31,7 @@ Template Name: Home - Background Photo
 
 ?>
 
-<main id="page">
+<main>
 
 	<!-- Set photo background -->
 		<div class="row hide-for-small-only" id="photo" aria-label="Highlighted Biology Research Imagery">
