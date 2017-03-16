@@ -59,6 +59,8 @@ if ( is_page_template( 'template-courses-undergrad.php' ) || is_page_template( '
 			$j('li.page-id-<?php echo $archive_id; ?>').addClass('current_page_parent');
 			});
 	</script>
+	<script async src="<?php echo get_template_directory_uri() ?>/assets/js/vendor/lightbox.min.js"></script>
+
 <?php } ?>
 <?php if ( is_singular('people') ) { ?>
 	<script defer>
