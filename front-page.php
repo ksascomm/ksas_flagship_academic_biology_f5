@@ -30,7 +30,7 @@ $theme_option = flagship_sub_get_global_options();
 					<h4><?php echo $theme_option['flagship_sub_feed_name']; ?></h4>
 				</div>
 				<?php while ( have_rows( 'explore_the_department' ) ) : the_row(); ?>
-				<article class="news-item" aria-labelledby="post-<?php the_ID(); ?>" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
+				<article class="news-item" itemscope="itemscope" itemtype="http://schema.org/BlogPosting" itemprop="blogPost">
 					<div class="small-12 large-4 columns post-container">
 						<div class="row">
 							<div class="small-11 small-centered columns post">
