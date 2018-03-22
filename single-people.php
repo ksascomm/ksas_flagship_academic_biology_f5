@@ -112,7 +112,6 @@
 				<?php if ( get_post_meta($post->ID, 'ecpt_publications', true) || get_post_meta($post->ID, 'ecpt_google_id', true) ) : ?>
 					<div class="content" id="publicationsTab">
 						<?php if ( get_post_meta($post->ID, 'ecpt_publications', true) ) : echo get_post_meta($post->ID, 'ecpt_publications', true); endif; ?>
-						<?php if ( get_post_meta($post->ID, 'ecpt_google_id', true) ) : locate_template('/parts/google-scholar.php', true, false); endif; ?>
 					</div>
 				<?php endif; ?>
 				<?php if ( get_post_meta($post->ID, 'ecpt_books_cond', true) == 'on' ) : locate_template('/parts/faculty-books.php', true, false); endif;?>
