@@ -8,8 +8,11 @@ $theme_option = flagship_sub_get_global_options();
 ?>
 <main>
 	<!-- Set photo background -->
-	<div class="row hide-for-small-only" id="photo" aria-label="Highlighted Biology Research Imagery">
+	<div class="row hide-for-small-only" aria-label="Highlighted Biology Research Imagery">
 		<div class="small-12 columns radius10">
+			<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
+				<?php the_post_thumbnail('full');?>
+			<?php endif;?>
 		</div>
 	</div>
 	
